@@ -49,7 +49,13 @@ __6.__
 ## PACKAGE DEPENDANY
 
 ---------------------------------------------------------
-[tinycss2](https://github.com/Kozea/tinycss2/blob/master/tinycss2)
+
+[tinycss2](https://github.com/Kozea/tinycss2/blob/master/tinycss2)<br>
+[xdict](https://github.com/ihgazni2/dlixhict-didactic)<br>
+[elist](https://github.com/ihgazni2/elist)<br>
+[edict](https://github.com/ihgazni2/edict)<br>
+[tlist](https://github.com/ihgazni2/tlist)<br>
+[estring](https://github.com/ihgazni2/estring)<br>
 
 ----------------------------------------------------------
 
