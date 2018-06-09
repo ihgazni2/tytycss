@@ -1,5 +1,6 @@
 # tytycss
 >__search css file by selector-string/prelude-string__
+__a wrapped APIs for tinycss2__
 
 # Install
 
@@ -48,7 +49,7 @@ __6.__
 ## PACKAGE DEPENDANY
 
 ---------------------------------------------------------
-[iconv-lite](https://www.npmjs.com/package/iconv-lite)
+[tinycss2](https://github.com/Kozea/tinycss2/blob/master/tinycss2)
 
 ----------------------------------------------------------
 
