@@ -86,8 +86,8 @@ __6.__
 ## TODO
 -----------------------------------------------
 
-__1.improve performance__<br>
-__2.deep search__<br>
+__1. improve performance__<br>
+__2. deep search__<br>
 
 -----------------------------------------------
 
