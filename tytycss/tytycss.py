@@ -1,5 +1,5 @@
-import copy
 import re
+import copy
 import tinycss2 as tycss
 import elist.elist as elel
 import estring.estring as eses
@@ -8,6 +8,7 @@ import edict.edict as eded
 from xdict.jprint import print_j_str
 from xdict.jprint import pobj
 from xdict.jprint import convert_token_in_quote 
+
 
 #prld  prelude
 #cntnt content
@@ -21,6 +22,11 @@ def read_file(fn):
     rslt = fd.read()
     fd.close()
     return(rslt)
+
+def write_file(fn,s):
+    fd = open(fn,'w+')
+    fd.write(s)
+    fd.close()
 
 
 def has_property(obj,name):
@@ -324,6 +330,7 @@ def encd_cntnt_atkey(d):
     '''
     return("@" + str(d['value']))
 
+
 def encd_other(d):
     return(str(d['value']))
 
@@ -436,6 +443,12 @@ def encd_paren_blk(d):
     return(s)
 
 def cntnt2cil(content,for_display=False):
+    ####for comments
+    if(content == None):
+        return([])
+    else:
+        pass
+    ####
     content = cntnt_fmt_norecur(content)
     rslt = elel.init(content.__len__())
     unhandled = cntnt_init_unhandled(content)
@@ -477,43 +490,44 @@ def get_atkey(rule):
         return("")
 
 def get_prelude_cil(rule,for_display=False):
-    p = dcds1_prelude(rule.prelude)
-    cil = cntnt2cil(p['content'],for_display)
+    if(has_property(rule,'prelude')):
+        p = dcds1_prelude(rule.prelude)
+        cil = cntnt2cil(p['content'],for_display)
+    else:
+        cil =[]
     return(cil)
 
 SELLITS = ['.','*','#',',','>','+',':','~']
-SELATTALITS = ['.','#']
-SELUNATTALITS = ['*',',','>','+',':','~']
-#此函数可靠
+SELATTANEXTS = ['.','#',',','>','+',':','~']
+SELATTABOTHS = [',','>','+',':','~']
+#
 def prelude_cil2str(cil):
     '''
         cil = ['a', '[target=_blank]', 'b', 'c']
         cil = ['a', '[target=_blank]', '[target=_blank]', 'b', 'c']
+        cil = ['a', '.', 'b', '>', 'c']
     '''
     last = cil[0]
     s = last
-    if(last in SELATTALITS):
+    if(last in SELATTANEXTS):
         pass
     else:
         s = s +'\x20'
     for i in range(1,cil.__len__()):
         curr = cil[i]
-        if(curr in SELATTALITS):
+        if(curr in SELATTABOTHS):
+            s = s.rstrip("\x20")
+        if(curr in SELATTANEXTS):
             s = s + curr
         elif(curr[0] == '['):
-            if(last[-1] == ']'):
+            if(s[-2:] == "] "):
                 s = s + curr + '\x20'
             else:
-                if(s[-1] == '\x20'):
-                   s = eses.rstrip(s,"\x20",1)
-                   s = s + curr + '\x20'
-                else:
-                    s = s + curr + '\x20'
+                s = eses.rstrip(s,"\x20",1)
+                s = s + curr + '\x20'
         else:
             s = s + curr + '\x20'
-        last = curr
     return(s.strip('\x20'))
-
 
 
 def get_prelude_str(rule):
@@ -543,7 +557,7 @@ def get_css_rule_cil(rule):
 
 
 def get_css_rule_str(d):
-    lines = print_j_str(r.dict.__str__(),with_color=False,fixed_indent=True)
+    lines = print_j_str(d.__str__(),with_color=False,fixed_indent=True)
     s = elel.join(lines,'\n')
     s = s.replace('[\n','{\n')
     s = s.replace(']\n','}\n')
@@ -569,10 +583,7 @@ def sel_fmt(sel):
 
 
 def slct_cond_func(rule,sel,mode="loose"):
-    if(False):
-        p = rule.prelude_cil
-    else:
-        p = get_prelude_cil(rule)
+    p = get_prelude_cil(rule)
     if(mode=="loose"):
         cond = elel.comprise(p,sel,mode="loose")
     else:
@@ -582,7 +593,6 @@ def slct_cond_func(rule,sel,mode="loose"):
 def slct_all(rules,sel,mode="loose"):
     sel = sel_fmt(sel)
     rules = elel.filter(rules,slct_cond_func,sel,mode)
-    rules = elel.array_map(rules,get_css_rule_str)
     return(rules)
 
 def slct_which(rules,sel,which,mode="loose"):
@@ -592,7 +602,7 @@ def slct_which(rules,sel,which,mode="loose"):
     if(r==None):
         return("")
     else:
-        return(get_css_rule_str(r))
+        return(r)
 
 def slct_first(rules,sel,mode="loose"):
     return(slct_which(rules,sel,0,mode))
@@ -611,7 +621,6 @@ def slct_at_cond_func(rule,atsel,mode="loose"):
 
 def slct_at_all(rules,atsel,mode="loose"):
     rules = elel.filter(rules,slct_at_cond_func,atsel,mode)
-    rules = elel.array_map(rules,get_css_rule_str)
     return(rules)
 
 def slct_at_which(rules,atsel,which,mode="loose"):
@@ -620,7 +629,7 @@ def slct_at_which(rules,atsel,which,mode="loose"):
     if(r==None):
         return("")
     else:
-        return(get_css_rule_str(r))
+        return(r)
 
 def slct_at_first(rules,atsel,mode="loose"):
     return(slct_at_which(rules,atsel,0,mode))
@@ -844,6 +853,15 @@ class ShowMat():
             self.gen.__next__()
 
 
+#############################
+def recover_comment(content):
+    comment = elel.join(content,'\n')
+    comment ="\*" + comment + "*\\"
+    return(comment)
+
+############################
+
+
 def matele2dict(ele):
     d = {}
     ele = ele['data']
@@ -854,9 +872,20 @@ def matele2dict(ele):
         pass
     k = k + "\x20" + ele['prelude']
     k = k.strip('\x20')
-    v = ele['content']
+    if(ele['type'] == 'comment'):
+        v = recover_comment(ele['content'])
+    else:
+        v = ele['content']
     d[k] = v
     return(d)
+
+#############################
+def recover_comment(content):
+    comment = elel.join(content,'\n')
+    comment ="\*" + comment + "*\\"
+    return(comment)
+
+############################
 
 def mat2dict(mat):
     mat = copy.deepcopy(mat)
@@ -924,13 +953,15 @@ class Rule():
 class CSS():
     def __init__(self,**kwargs):
         self.rules = get_rules(**kwargs)
-        self.rules = elel.array_map(self.rules,lambda r:Rule(r))
         self.count = self.rules.__len__()
+    def __getitem__(self,i):
+        r = Rule(self.rules[i])
+        return(r)
     def all(self,sel,mode="loose"):
         rs = slct_all(self.rules,sel,mode)
         rs = elel.array_map(rs,lambda r:Rule(r))
         return(rs)
-    def which(self,sel,mode="loose"):
+    def which(self,sel,which,mode="loose"):
         r = slct_which(self.rules,sel,which,mode)
         r = Rule(r)
         return(r)
@@ -946,7 +977,7 @@ class CSS():
         rs = slct_at_all(self.rules,sel,mode)
         rs = elel.array_map(rs,lambda r:Rule(r))
         return(rs)
-    def at_which(self,sel,mode="loose"):
+    def at_which(self,sel,which,mode="loose"):
         r = slct_at_which(self.rules,sel,which,mode)
         r = Rule(r)
         return(r)
@@ -978,3 +1009,25 @@ class CSS():
 
 #prelude 紧凑
 #content 松散
+
+def beautify_selpath(sel):
+    cil = sel_fmt(sel)
+    sel = prelude_cil2str(cil)
+    return(sel)
+
+
+def beautify_rule(input):
+    r = Rule(input)
+    print(r.css)
+    return(r.css)
+   
+def beautify_cssfile(src_file,dst_file):
+    def trim_func(s):
+        s = s.strip('/n')
+        s = eses.lstrip(s,'{',1)
+        s = eses.rstrip(s,'}',1)
+        return(s)
+    css = CSS(fn=src_file)
+    arr = elel.array_map(css,trim_funt)
+    s = elel.join(arr,'\n')
+    write_file(dst_file,s) 
