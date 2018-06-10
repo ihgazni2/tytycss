@@ -16,7 +16,9 @@ __1. ![load from input string](/Images/tyty.CSS.__init__0.png)__<br>
 
         css = tyty.CSS(input=input) 
 
-![at-rule input string](/Images/tyty.CSS.__init__2.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![at-rule input string](/Images/tyty.CSS.__init__2.png)  
+
+
 __2. ![load all css rules from a .css file](/Images/tyty.CSS.__init__1.png)__
 
         css = tyty.CSS(fn="tst1.css")  
@@ -29,14 +31,15 @@ __3. ![display](/Images/tyty.Rule.display.0.png)__
         r.prelude
         r.head
         r.show_content()
-__4. ![search in loose mode](/Images/tyty.CSS.all.loose.0.png) ,default is loose<br>    find all rules whose selectors-path includes 'ul'__   
+__4. ![search in loose mode](/Images/tyty.CSS.all.loose.0.png)<br>    default is loose<br>    find all rules whose selectors-path includes 'ul'__   
 
         rs = css.all("ul")
 __5. ![search in strict mode](/Images/tyty.CSS.all.strict.0.png)<br> find all rules whose selectors-path equals ".maincontent"__
 
         rs = css.all(".maincontent",mode="strict")
 
-![compare with loose mode](/Images/tyty.CSS.all.loose.1.png)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![compare with loose mode](/Images/tyty.CSS.all.loose.1.png)  
+
 __6. ![single search](/Images/tyty.CSS.first_last_which.0.png)__
 
         r = css.first("ul")
@@ -55,11 +58,11 @@ __8. ![beautify rule](/Images/tyty.CSS.beautify_rule.0.png)__
 
 __10. beautify file__
 
-![before](/Images/tyty.CSS.beautify_cssfile.0.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![before](/Images/tyty.CSS.beautify_cssfile.0.png)
 
         tyty.beautify_cssfile("tst1.css","tst1.fmt.css")
         
-![after](/Images/tyty.CSS.beautify_cssfile.1.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![after](/Images/tyty.CSS.beautify_cssfile.1.png)
 
 
 __11. ![show as dict](/Images/tyty.CSS.show.0.png)__
