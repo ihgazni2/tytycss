@@ -13,12 +13,10 @@ In Prigressing.....
         
 __1.load from input string__  
 
-    css = tyty.CSS(input=input)
-          
+    css = tyty.CSS(input=input)          
 __2.load all css rules from a .css file__
 
-    css = tyty.CSS(fn="tst1.css")
-        
+    css = tyty.CSS(fn="tst1.css")        
 __3.display__
 
     css.count
@@ -27,12 +25,10 @@ __3.display__
     r.show_css()
     r.prelude
     r.head
-    r.show_content()    
-            
-__4.search in loose mode ,default is loose<br>find all rules whose selectors-path includes 'ul'__  
+    r.show_content()               
+__4.search in loose mode ,default is loose<br>    find all rules whose selectors-path includes 'ul'__  
 
     rs = css.all("ul")
-        
 __5.__
 
         
