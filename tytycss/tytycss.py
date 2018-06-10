@@ -1050,6 +1050,9 @@ def beautify_selpath(sel):
 
 
 def beautify_rule(input):
+    css = CSS(input)
+    arr = elel.array_map(css,trim_func)
+    s = elel.join(arr,'\n')
     r = Rule(input)
     print(r.css)
     return(r.css)
