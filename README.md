@@ -8,12 +8,13 @@ __a wrapped APIs for tinycss2__
 
 ## Usage
 
+>_click to see example_
 -------------------------------------------------------
         
-__1. load from input string__ 
+__1. ![load from input string](/Images/tyty.CSS.__init__0.png)__ 
 
     css = tyty.CSS(input=input) 
-[example]()
+    
 
 __2. load all css rules from a .css file__
 
@@ -80,7 +81,7 @@ __6.__
 
 
 
-![](/Images/.0.png)
+
 ![](/Images/.1.png)
 ![](/Images/.2.png)
 
