@@ -1,4 +1,5 @@
 import copy
+import re
 import tinycss2 as tycss
 import elist.elist as elel
 import estring.estring as eses
@@ -568,7 +569,10 @@ def sel_fmt(sel):
 
 
 def slct_cond_func(rule,sel,mode="loose"):
-    p = get_prelude_cil(rule)
+    if(False):
+        p = rule.prelude_cil
+    else:
+        p = get_prelude_cil(rule)
     if(mode=="loose"):
         cond = elel.comprise(p,sel,mode="loose")
     else:
@@ -887,7 +891,7 @@ class Rule():
         self.content_cil = get_content_cil(rule)
         self.mat = gen_4e_mat(rule)
         self.dict = mat2dict(self.mat)
-        self.head = list(self.dict.keys)[0]
+        self.head = list(self.dict.keys())[0]
         self.content = get_css_rule_str(self.dict[self.head])
         self.css_cil = get_css_rule_cil(rule)
         self.css = get_css_rule_str(self.dict)
@@ -920,36 +924,38 @@ class Rule():
 class CSS():
     def __init__(self,**kwargs):
         self.rules = get_rules(**kwargs)
+        self.rules = elel.array_map(self.rules,lambda r:Rule(r))
+        self.count = self.rules.__len__()
     def all(self,sel,mode="loose"):
-        rs = slct_all(rules,sel,mode)
+        rs = slct_all(self.rules,sel,mode)
         rs = elel.array_map(rs,lambda r:Rule(r))
         return(rs)
     def which(self,sel,mode="loose"):
-        r = slct_which(rules,sel,which,mode)
+        r = slct_which(self.rules,sel,which,mode)
         r = Rule(r)
         return(r)
     def first(self,sel,mode="loose"):
-        r = slct_first(rules,sel,mode)
+        r = slct_first(self.rules,sel,mode)
         r = Rule(r)
         return(r)
     def last(self,sel,mode="loose"):
-        r = slct_first(rules,sel,mode)
+        r = slct_first(self.rules,sel,mode)
         r = Rule(r)
         return(r)
     def at_all(self,sel,mode="loose"):
-        rs = slct_at_all(rules,sel,mode)
+        rs = slct_at_all(self.rules,sel,mode)
         rs = elel.array_map(rs,lambda r:Rule(r))
         return(rs)
     def at_which(self,sel,mode="loose"):
-        r = slct_at_which(rules,sel,which,mode)
+        r = slct_at_which(self.rules,sel,which,mode)
         r = Rule(r)
         return(r)
     def at_first(self,sel,mode="loose"):
-        r = slct_at_first(rules,sel,mode)
+        r = slct_at_first(self.rules,sel,mode)
         r = Rule(r)
         return(r)
     def at_last(self,sel,mode="loose"):
-        r = slct_at_first(rules,sel,mode)
+        r = slct_at_first(self.rules,sel,mode)
         r = Rule(r)
         return(r)
     def help(self):
