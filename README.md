@@ -38,7 +38,7 @@ __5. [search in strict mode](/tytycss/Images/tyty.CSS.all.strict.0.png)<br>&nbsp
 
         rs = css.all(".maincontent",mode="strict")
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![compare with loose mode](/tytycss/Images/tyty.CSS.all.loose.1.png)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[compare with loose mode](/tytycss/Images/tyty.CSS.all.loose.1.png)  
 
 __6. [single search](/tytycss/Images/tyty.CSS.first_last_which.0.png)__
 
@@ -58,11 +58,11 @@ __8. [beautify rule](/tytycss/Images/tyty.CSS.beautify_rule.0.png)__
 
 __10. beautify file__
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![before](/tytycss/Images/tyty.CSS.beautify_cssfile.0.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[before](/tytycss/Images/tyty.CSS.beautify_cssfile.0.png)
 
         tyty.beautify_cssfile("tst1.css","tst1.fmt.css")
         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![after](/tytycss/Images/tyty.CSS.beautify_cssfile.1.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[after](/tytycss/Images/tyty.CSS.beautify_cssfile.1.png)
 
 
 __11. [show as dict](/tytycss/Images/tyty.CSS.show.0.png)__
