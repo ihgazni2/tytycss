@@ -31,10 +31,10 @@ __3. ![display](/Images/tyty.Rule.display.0.png)__
         r.prelude
         r.head
         r.show_content()
-__4. ![search in loose mode](/Images/tyty.CSS.all.loose.0.png)<br>    default is loose<br>    find all rules whose selectors-path includes 'ul'__   
+__4. ![search in loose mode](/Images/tyty.CSS.all.loose.0.png)<br>&nbsp;&nbsp;&nbsp;&nbsp;default is loose<br>&nbsp;&nbsp;&nbsp;&nbsp;find all rules whose selectors-path includes 'ul'__   
 
         rs = css.all("ul")
-__5. ![search in strict mode](/Images/tyty.CSS.all.strict.0.png)<br> find all rules whose selectors-path equals ".maincontent"__
+__5. ![search in strict mode](/Images/tyty.CSS.all.strict.0.png)<br>&nbsp;&nbsp;&nbsp;&nbsp;find all rules whose selectors-path equals ".maincontent"__
 
         rs = css.all(".maincontent",mode="strict")
 
