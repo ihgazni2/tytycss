@@ -8,16 +8,16 @@ __a wrapped APIs for tinycss2__
 
 
 ## Usage
+In Prigressing.....
 -------------------------------------------------------
-
         
-__1. __  
+__1.__  
 
           
-__2. __
+__2.__
 
         
-__3. __
+__3.__
 
             
 __4.__  
@@ -49,7 +49,13 @@ __6.__
 ## PACKAGE DEPENDANY
 
 ---------------------------------------------------------
-[tinycss2](https://github.com/Kozea/tinycss2/blob/master/tinycss2)
+
+[tinycss2](https://github.com/Kozea/tinycss2/blob/master/tinycss2)<br>
+[xdict](https://github.com/ihgazni2/dlixhict-didactic)<br>
+[elist](https://github.com/ihgazni2/elist)<br>
+[edict](https://github.com/ihgazni2/edict)<br>
+[tlist](https://github.com/ihgazni2/tlist)<br>
+[estring](https://github.com/ihgazni2/estring)<br>
 
 ----------------------------------------------------------
 
@@ -85,7 +91,9 @@ __6.__
 
 ## TODO
 -----------------------------------------------
-__1.improve performance__<br>
-__2.deep search__<br>
+
+>__1. improve performance__ <br> 
+__2. deep search__ <br>
+
 -----------------------------------------------
 
