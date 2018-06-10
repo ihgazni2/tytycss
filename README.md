@@ -6,18 +6,21 @@ __a wrapped APIs for tinycss2__
 
 >__pip3 install tytycss__
 
-
 ## Usage
-In Prigressing.....
+
 -------------------------------------------------------
         
-__1. load from input string__[example]()  
+__1. load from input string__ 
 
-    css = tyty.CSS(input=input)          
-__2. load all css rules from a .css file__[example]() 
+    css = tyty.CSS(input=input) 
+[example]()
 
-    css = tyty.CSS(fn="tst1.css")        
-__3. display__[example]() 
+__2. load all css rules from a .css file__
+
+    css = tyty.CSS(fn="tst1.css")  
+![example]() 
+
+__3. display__
 
     css.count
     r = css[2]
@@ -25,13 +28,18 @@ __3. display__[example]()
     r.show_css()
     r.prelude
     r.head
-    r.show_content()               
-__4. search in loose mode ,default is loose<br>    find all rules whose selectors-path includes 'ul'__[example]()   
+    r.show_content()
+![example]() 
+
+__4. search in loose mode ,default is loose<br>    find all rules whose selectors-path includes 'ul'__   
 
     rs = css.all("ul")
-__5. __[example]() 
+![example]()
 
-        
+__5. __
+
+![example]() 
+
 -------------------------------------------------------
 
 ## Doc Help Man
