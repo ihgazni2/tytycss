@@ -1,5 +1,6 @@
 import re
 import copy
+import html
 import tinycss2 as tycss
 import elist.elist as elel
 import estring.estring as eses
@@ -334,6 +335,12 @@ def encd_cntnt_atkey(d):
 def encd_other(d):
     return(str(d['value']))
 
+
+
+def encd_hash(d):
+    return("#" + str(d['value']))
+
+
 def encd_one(d):
     if(d['type'] == 'dimension'):
         s = encd_dimension(d)
@@ -341,11 +348,18 @@ def encd_one(d):
         s = encd_percentage(d)
     elif(d['type'] == 'function'):
         s = encd_function(d)
+    elif(d['type'] == 'hash'):
+        s = encd_hash(d)
     elif(d['type'] == 'at-keyword'):
         s = encd_cntnt_atkey(d)
     else:
         s = encd_other(d)
     return(s)
+
+
+
+
+
 
 def encd_square_blk(d,for_display=False):
     '''
@@ -507,6 +521,10 @@ def prelude_cil2str(cil):
         cil = ['a', '[target=_blank]', '[target=_blank]', 'b', 'c']
         cil = ['a', '.', 'b', '>', 'c']
     '''
+    if(cil.__len__()==0):
+        return("")
+    else:
+        pass
     last = cil[0]
     s = last
     if(last in SELATTANEXTS):
@@ -555,13 +573,24 @@ def get_css_rule_cil(rule):
 
 
 
-
 def get_css_rule_str(d):
     lines = print_j_str(d.__str__(),with_color=False,fixed_indent=True)
     s = elel.join(lines,'\n')
     s = s.replace('[\n','{\n')
     s = s.replace(']\n','}\n')
+    s = s.replace(':\x20\n','\n')
+    s = s.replace(',\x20\n','\n')
+    s = convert_token_in_quote(s)
+    s = s .replace("'","")
+    s = html.unescape(s)
+    s = s.strip('\x20').strip('\n').strip('\x20')
+    if(s[-1] == "]"):
+        s = s[:-1] + '}'
+    else:
+        pass
     return(s)
+
+
 
 #########search###############
 def get_dummy_sel_rule(sel):
@@ -764,6 +793,7 @@ def cbs_fmt(cbs,**kwargs):
     '''
        cbs = 'float:none;display:block;'
        cbs = 'float:none;display:block'
+       cbs = 'font-family: "Droid Sans", arial, sans-serif; font-weight: bold; font-size: 14px;'
        
     '''
     if('sp' in kwargs):
@@ -772,10 +802,13 @@ def cbs_fmt(cbs,**kwargs):
         sp = ';'
     cbs = convert_token_in_quote(cbs,colons=[";"])
     cbs = cbs.replace("&#59;","")
+    cbs = html.unescape(cbs)
     cbs = cbs.strip(sp)
     arr = cbs.split(sp)
     arr = elel.array_map(arr,lambda ele:(ele+sp))
     return(arr)
+
+
 
 def gen_4e_mat(rule,**kwargs):
     if("codec" in kwargs):
@@ -1022,12 +1055,13 @@ def beautify_rule(input):
     return(r.css)
    
 def beautify_cssfile(src_file,dst_file):
-    def trim_func(s):
+    def trim_func(r):
+        s = r.css
         s = s.strip('/n')
         s = eses.lstrip(s,'{',1)
         s = eses.rstrip(s,'}',1)
         return(s)
     css = CSS(fn=src_file)
-    arr = elel.array_map(css,trim_funt)
+    arr = elel.array_map(css,trim_func)
     s = elel.join(arr,'\n')
     write_file(dst_file,s) 
