@@ -534,7 +534,7 @@ def prelude_cil2str(cil):
         pass
     lngth = cil.__len__()
     ####
-    prev = cil[i]
+    prev = cil[0]
     ncil = [prev]
     ####
     i = 1
