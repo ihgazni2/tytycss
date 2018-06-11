@@ -24,7 +24,7 @@
         }
 
 
-    .maincontent .full
+    .maincontent.full
         {
             width: 100%;
         }
@@ -57,13 +57,13 @@
         }
 
 
-    img .scale-with-grid
+    img.scale-with-grid
         {
             max-width: 100% ! important;
         }
 
 
-    .articleinner img, .blogcontent img, .page img, .widget img
+    .articleinner img,.blogcontent img,.page img,.widget img
         {
             max-width: 100% ! important;
         }
@@ -86,7 +86,7 @@
         }
 
 
-    .button, a .button, span .more-link
+    .button,a.button,span.more-link
         {
             background-color: rgb(51, 51, 51);
              color: rgb(255, 255, 255);
@@ -106,26 +106,26 @@
         }
 
 
-    span .more-link
+    span.more-link
         {
             float: left;
              display: block;
         }
 
 
-    a .more-link
+    a.more-link
         {
             display: block;
         }
 
 
-    .button:hover, a .button:hover, span .more-link:hover, #submit:hover
+    .button:hover,a.button:hover,span.more-link:hover,#submit:hover
         {
             color: rgb(255, 255, 255);
         }
 
 
-    span .more-link, a .button, .button
+    span.more-link,a.button,.button
         {
             margin-top: 10px;
         }
@@ -140,7 +140,7 @@
         }
 
 
-    .widget li .recentcomments
+    .widget li.recentcomments
         {
             font-size: 12px;
              width: auto;
@@ -161,14 +161,14 @@
         }
 
 
-    .widget li .recentcomments
+    .widget li.recentcomments
         {
             background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.05);
              color: rgb(85, 85, 85) ! important;
         }
 
 
-    .widget li .recentcomments:after
+    .widget li.recentcomments:after
         {
             content: "";
              position: absolute ! important;
@@ -187,7 +187,7 @@
         }
 
 
-    .widget li .recentcomments:before
+    .widget li.recentcomments:before
         {
             content: "";
              position: absolute ! important;
@@ -203,7 +203,7 @@
         }
 
 
-    input[type=text], textarea
+    input[type=text],textarea
         {
             border-style: solid;
              border-width: 1px;
@@ -212,7 +212,7 @@
         }
 
 
-    input[type=text], textarea, #commentsubmit input[type=text], #commentsubmit textarea, .contactsubmit input[type=text], .contactsubmit textarea, .contactsubmit select, select #top_nav_menu
+    input[type=text],textarea,#commentsubmit input[type=text],#commentsubmit textarea,.contactsubmit input[type=text],.contactsubmit textarea,.contactsubmit select,select#top_nav_menu
         {
             background: rgb(255, 255, 255);
              color: rgb(85, 85, 85);
@@ -220,7 +220,7 @@
         }
 
 
-    input #s
+    input#s
         {
             padding: 10px;
              border-style: solid;
@@ -241,7 +241,7 @@
         }
 
 
-    .nav .search input #s
+    .nav .search input#s
         {
             background: none repeat scroll 0% 0% rgb(255, 255, 255);
              color: rgb(85, 85, 85);
@@ -250,7 +250,7 @@
         }
 
 
-    .sf-menu, .sf-menu *
+    .sf-menu,.sf-menu *
         {
             margin: 0px;
              padding: 0px;
@@ -299,7 +299,7 @@
         }
 
 
-    .sf-menu li .active a
+    .sf-menu li.active a
         {
             background: #EEE;
              color: #333333;
@@ -337,20 +337,20 @@
         }
 
 
-    .sf-menu li a:hover, .sf-menu li .sfHover a
+    .sf-menu li a:hover,.sf-menu li.sfHover a
         {
             background: none repeat scroll 0% 0% rgb(17, 17, 17);
              color: rgb(255, 255, 255);
         }
 
 
-    .sf-menu li a:hover .sf-sub-indicator, .sf-menu li .sfHover .sf-sub-indicator, .sf-menu li .current-menu-item a .sf-sub-indicator
+    .sf-menu li a:hover .sf-sub-indicator,.sf-menu li.sfHover .sf-sub-indicator,.sf-menu li.current-menu-item a .sf-sub-indicator
         {
             background: url("../img/navarrows-dark.png") no-repeat scroll -10px -100px transparent;
         }
 
 
-    .sf-menu li li a, .sf-menu li li a:visited, .sf-menu li .sfHover li a
+    .sf-menu li li a,.sf-menu li li a:visited,.sf-menu li.sfHover li a
         {
             font-size: 12px;
              line-height: 18px;
@@ -361,7 +361,7 @@
         }
 
 
-    .sf-menu li li:last-child a, .sf-menu li li:last-child a:visited
+    .sf-menu li li:last-child a,.sf-menu li li:last-child a:visited
         {
             border-bottom: medium none;
         }
@@ -385,14 +385,14 @@
         }
 
 
-    .sf-menu li li:hover, .sf-menu li li .sfHover, .sf-menu li li a:focus, .sf-menu li li a:hover, .sf-menu li li a:active
+    .sf-menu li li:hover,.sf-menu li li.sfHover,.sf-menu li li a:focus,.sf-menu li li a:hover,.sf-menu li li a:active
         {
             background: none repeat scroll 0% 0% rgb(243, 243, 243);
              outline: 0px none;
         }
 
 
-    .sf-menu a .sf-with-ul
+    .sf-menu a.sf-with-ul
         {
             padding-right: 28px;
              min-width: 1px;
@@ -413,13 +413,13 @@
         }
 
 
-    .container .navcontainer
+    .container.navcontainer
         {
             z-index: 10;
         }
 
 
-    .sf-menu li ul, .sf-menu li li ul
+    .sf-menu li ul,.sf-menu li li ul
         {
             box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.35);
         }
@@ -452,7 +452,7 @@
         }
 
 
-    .isotope, .isotope .isotope-item
+    .isotope,.isotope .isotope-item
         {
             transition-duration: 0.8s;
         }
@@ -483,7 +483,7 @@
         }
 
 
-    div .featured .articlecontainer
+    div.featured.articlecontainer
         {
             opacity: 0;
         }
@@ -512,13 +512,13 @@
         }
 
 
-    .featured .half .featuredoverlay, .featured .quarter .featuredoverlay
+    .featured .half .featuredoverlay,.featured .quarter .featuredoverlay
         {
             height: 200px;
         }
 
 
-    .featured h2, .featured h2 a
+    .featured h2,.featured h2 a
         {
             font-size: 30px;
              line-height: 32px;
@@ -533,7 +533,7 @@
         }
 
 
-    span .date
+    span.date
         {
             display: block;
              opacity: 0.9;
@@ -542,13 +542,13 @@
         }
 
 
-    span .date, span .date a
+    span.date,span.date a
         {
             color: rgb(85, 85, 85);
         }
 
 
-    span .date a .bubble, span .date a .bubble:hover
+    span.date a.bubble,span.date a.bubble:hover
         {
             position: absolute;
              right: 0px;
@@ -557,7 +557,7 @@
         }
 
 
-    .featured span .date
+    .featured span.date
         {
             font-size: 10px;
              margin-top: 5px;
@@ -565,7 +565,7 @@
         }
 
 
-    .articleinner span .date
+    .articleinner span.date
         {
             margin-bottom: 15px;
         }
@@ -596,19 +596,19 @@
         }
 
 
-    .featured .one_col .half
+    .featured .one_col.half
         {
             height: 124px;
         }
 
 
-    .featured .one_col, .featured .two_col
+    .featured .one_col,.featured .two_col
         {
             margin: 1px;
         }
 
 
-    .container .featuredcontainer
+    .container.featuredcontainer
         {
             width: 966px;
              margin-left: -1px;
@@ -627,7 +627,7 @@
         }
 
 
-    .articleinner h1, .articleinner h1 a, .articleinner h2, .articleinner h2 a, .articleinner h3, .articleinner h3 a, .articleinner h4, .articleinner h4 a, .articleinner h5, .articleinner h5 a .articleinner h6, .articleinner h6 a
+    .articleinner h1,.articleinner h1 a,.articleinner h2,.articleinner h2 a,.articleinner h3,.articleinner h3 a,.articleinner h4,.articleinner h4 a,.articleinner h5,.articleinner h5 a .articleinner h6,.articleinner h6 a
         {
             font-size: 12px ! important;
              line-height: 20px ! important;
@@ -644,7 +644,7 @@
         }
 
 
-    .featured h2, .featured h2 a
+    .featured h2,.featured h2 a
         {
             font-size: 22px;
              line-height: 28px;
@@ -654,20 +654,20 @@
         }
 
 
-    .featured .half h2, .featured .half h2 a
+    .featured .half h2,.featured .half h2 a
         {
             font-size: 16px;
              line-height: 18px;
         }
 
 
-    .featured .one_col .half
+    .featured .one_col.half
         {
             height: 124px;
         }
 
 
-    .articleinner h2, .widget .articleinner h2, .articleinner h2 a, .widget artileinner h2 a
+    .articleinner h2,.widget .articleinner h2,.articleinner h2 a,.widget artileinner h2 a
         {
             font-size: 20px ! important;
              line-height: 26px ! important;
@@ -676,7 +676,7 @@
         }
 
 
-    .rating .points, .rating .percent
+    .rating.points,.rating.percent
         {
             width: 75px;
              float: left;
@@ -689,7 +689,7 @@
         }
 
 
-    p .ratingtext
+    p.ratingtext
         {
             margin-bottom: 0px;
              font-size: 12px;
@@ -709,7 +709,7 @@
         }
 
 
-    .thumbnailarea, .tabs-content .featuredimage
+    .thumbnailarea,.tabs-content .featuredimage
         {
             position: relative;
              display: block;
@@ -730,7 +730,7 @@
         }
 
 
-    .categories a, .single .sidebar .categories a, .categories span
+    .categories a,.single .sidebar .categories a,.categories span
         {
             color: white;
              background: none repeat scroll 0% 0% rgb(193, 193, 193);
@@ -739,7 +739,7 @@
         }
 
 
-    a .thumblink
+    a.thumblink
         {
             display: block;
         }
@@ -777,7 +777,7 @@
         }
 
 
-    #news_select:after, .reviewbox .reviewboxtitle h4:after
+    #news_select:after,.reviewbox .reviewboxtitle h4:after
         {
             content: "";
              width: 0px;
@@ -789,20 +789,20 @@
         }
 
 
-    .ajax-select ul .sf-menu
+    .ajax-select ul.sf-menu
         {
             width: 100%;
         }
 
 
-    .ajax-select ul .sf-menu li li a
+    .ajax-select ul.sf-menu li li a
         {
             font-weight: normal ! important;
              font-size: 12px ! important;
         }
 
 
-    .ajax-select .sf-menu li:hover ul, .ajax-select .sf-menu li .sfHover ul
+    .ajax-select .sf-menu li:hover ul,.ajax-select .sf-menu li.sfHover ul
         {
             left: 0px;
              top: 3.6em;
@@ -811,7 +811,7 @@
         }
 
 
-    .ajax-select a> .sf-sub-indicator
+    .ajax-select a>.sf-sub-indicator
         {
             top: 0.9em;
              right: 12px;
@@ -831,7 +831,7 @@
         }
 
 
-    .paginationbutton a .button
+    .paginationbutton a.button
         {
             display: block;
              text-align: center;
@@ -862,7 +862,7 @@
         }
 
 
-    .widget h3, .widget h2, .widget h4
+    .widget h3,.widget h2,.widget h4
         {
             margin: 0px 0px 16px;
              padding: 0px;
@@ -941,7 +941,7 @@
         }
 
 
-    .social-button-style .button, .social-button-style .button:visited, #footer .social-button-style .button, #footer .social-button-style .button:visited
+    .social-button-style .button,.social-button-style .button:visited,#footer .social-button-style .button,#footer .social-button-style .button:visited
         {
             padding: 5px 7px 0px;
              display: block;
@@ -962,7 +962,7 @@
         }
 
 
-    .social-button-style .button:hover, #footer .social-button-style .button:hover
+    .social-button-style .button:hover,#footer .social-button-style .button:hover
         {
             color: rgb(51, 51, 51) ! important;
              text-decoration: none;
@@ -981,7 +981,7 @@
         }
 
 
-    .social-button-style .button .img, .social-button-style .button .img:visited, #footer .social-button-style .button .img, #footer .social-button-style .button .img:visited
+    .social-button-style .button.img,.social-button-style .button.img:visited,#footer .social-button-style .button.img,#footer .social-button-style .button.img:visited
         {
             line-height: 23px;
              vertical-align: middle;
@@ -998,14 +998,14 @@
         }
 
 
-    .social-button-style .facebook-blue, .social-button-style .twitter-blue, .social-button-style .rss-orange
+    .social-button-style .facebook-blue,.social-button-style .twitter-blue,.social-button-style .rss-orange
         {
             background: rgb(153, 153, 153) ! important;
              _background: #none;
         }
 
 
-    .social-button-style:hover .button .facebook-blue, #footer .social-button-style:hover .button .facebook-blue
+    .social-button-style:hover .button.facebook-blue,#footer .social-button-style:hover .button.facebook-blue
         {
             background: rgb(80, 116, 191) ! important;
              border: medium none;
@@ -1013,7 +1013,7 @@
         }
 
 
-    .social-button-style:hover .button .twitter-blue, #footer .social-button-style:hover .button .twitter-blue
+    .social-button-style:hover .button.twitter-blue,#footer .social-button-style:hover .button.twitter-blue
         {
             background-color: #FF2A99 ! important;
              border: medium none;
@@ -1022,7 +1022,7 @@
         }
 
 
-    .social-button-style:hover .button .rss-orange, #footer .social-button-style:hover .button .rss-orange
+    .social-button-style:hover .button.rss-orange,#footer .social-button-style:hover .button.rss-orange
         {
             background-color: rgb(247, 134, 52) ! important;
              border: medium none;
@@ -1031,7 +1031,7 @@
         }
 
 
-    ul .tabs
+    ul.tabs
         {
             display: block;
              margin: 0px 0px 20px;
@@ -1040,7 +1040,7 @@
         }
 
 
-    ul .tabs li
+    ul.tabs li
         {
             display: block;
              width: auto;
@@ -1053,7 +1053,7 @@
         }
 
 
-    ul .tabs li a
+    ul.tabs li a
         {
             display: block;
              text-decoration: none;
@@ -1070,14 +1070,14 @@
         }
 
 
-    ul .tabs li a:hover
+    ul.tabs li a:hover
         {
             color: rgb(51, 51, 51);
              box-shadow: 0px -1px 1px rgb(243, 243, 243);
         }
 
 
-    ul .tabs li a .active
+    ul.tabs li a.active
         {
             height: 30px;
              position: relative;
@@ -1090,26 +1090,26 @@
         }
 
 
-    ul .tabs li:first-child a .active
+    ul.tabs li:first-child a.active
         {
             margin-left: 0px;
         }
 
 
-    ul .tabs li:first-child a
+    ul.tabs li:first-child a
         {
             border-width: 1px 1px 0px;
         }
 
 
-    ul .tabs-content
+    ul.tabs-content
         {
             margin: 0px;
              display: block;
         }
 
 
-    ul .tabs-content li
+    ul.tabs-content li
         {
             display: none;
              margin-left: 0px;
@@ -1117,13 +1117,13 @@
         }
 
 
-    ul .tabs-content li .active
+    ul.tabs-content li.active
         {
             display: block;
         }
 
 
-    ul .tabs:before, ul .tabs:after
+    ul.tabs:before,ul.tabs:after
         {
             content: " ";
              display: block;
@@ -1134,20 +1134,20 @@
         }
 
 
-    ul .tabs:after
+    ul.tabs:after
         {
             clear: both;
         }
 
 
-    .tabswrap ul .tabs
+    .tabswrap ul.tabs
         {
             border: medium none;
              margin: 0px;
         }
 
 
-    .tabswrap ul .tabs li a
+    .tabswrap ul.tabs li a
         {
             background: none repeat scroll 0% 0% rgb(51, 51, 51);
              color: rgb(255, 255, 255);
@@ -1166,19 +1166,19 @@
         }
 
 
-    .tabswrap ul .tabs li a
+    .tabswrap ul.tabs li a
         {
             box-shadow: none;
         }
 
 
-    .tabswrap ul .tabs li
+    .tabswrap ul.tabs li
         {
             width: 33%;
         }
 
 
-    .tabswrap ul .tabs li a .active
+    .tabswrap ul.tabs li a.active
         {
             top: auto;
              height: 30px;
@@ -1223,13 +1223,13 @@
         }
 
 
-    .tabswrap p .views
+    .tabswrap p.views
         {
             margin-top: 10px;
         }
 
 
-    .tabswrap p .views span
+    .tabswrap p.views span
         {
             display: block;
              float: left;
@@ -1269,34 +1269,34 @@
         }
 
 
-    .button:hover, a .button:hover, span .more-link:hover, .cancel-reply p a:hover
+    .button:hover,a.button:hover,span.more-link:hover,.cancel-reply p a:hover
         {
             background: none repeat scroll 0% 0% rgb(51, 51, 51) ! important;
              color: rgb(255, 255, 255);
         }
 
 
-    .button, a .button, span .more-link, #footer .button, #footer a .button, #footer span .more-link, .cancel-reply p a
+    .button,a.button,span.more-link,#footer .button,#footer a.button,#footer span.more-link,.cancel-reply p a
         {
             background: none repeat scroll 0% 0% rgb(0, 164, 152);
              color: rgb(255, 255, 255);
         }
 
 
-    .summary, .rating .stars, .rating .points, .rating .percent, .scorebar, .categories a:hover, .tagcloud a, .single .categories a, .single .sidebar .categories a:hover, .tabswrap ul .tabs li a .active, .tabswrap ul .tabs li a:hover, #footer .tabswrap ul .tabs li a:hover, #footer .tabswrap ul .tabs li a .active, .sf-menu li a:hover, .sf-menu li .hover a, .sf-menu li .sfHover a, .pagination a .button .share:hover, #commentsubmit #submit, #cancel-comment-reply-link
+    .summary,.rating.stars,.rating.points,.rating.percent,.scorebar,.categories a:hover,.tagcloud a,.single .categories a,.single .sidebar .categories a:hover,.tabswrap ul.tabs li a.active,.tabswrap ul.tabs li a:hover,#footer .tabswrap ul.tabs li a:hover,#footer .tabswrap ul.tabs li a.active,.sf-menu li a:hover,.sf-menu li.hover a,.sf-menu li.sfHover a,.pagination a.button.share:hover,#commentsubmit #submit,#cancel-comment-reply-link
         {
             background: none repeat scroll 0% 0% rgb(0, 164, 152);
              color: rgb(255, 255, 255) ! important;
         }
 
 
-    blockquote, .tabswrap .tabpost a:hover, .articleinner h2 a:hover, span .date a:hover
+    blockquote,.tabswrap .tabpost a:hover,.articleinner h2 a:hover,span.date a:hover
         {
             color: rgb(0, 164, 152) ! important;
         }
 
 
-    h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, p a:hover, .blogpost h2 a:hover, .blogpost .smalldetails a:hover
+    h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,p a:hover,.blogpost h2 a:hover,.blogpost .smalldetails a:hover
         {
             color: rgb(51, 51, 51);
         }
@@ -1309,7 +1309,7 @@
         }
 
 
-    h1, h2, h1 a, h2 a, .blogpost h2 a, h3, .ag_projects_widget h3, h3 a, .aj_projects_widget h3 a, .ajax-select ul .sf-menu a, .pagination .button, .nivo-caption h3 .title
+    h1,h2,h1 a,h2 a,.blogpost h2 a,h3,.ag_projects_widget h3,h3 a,.aj_projects_widget h3 a,.ajax-select ul.sf-menu a,.pagination .button,.nivo-caption h3.title
         {
             font-family: "Microsoft Yahei", arial, sans-serif;
              font-weight: normal;
@@ -1317,7 +1317,7 @@
         }
 
 
-    h5, h5 a, .widget h3, .widget h2, .widget h4, .reviewbox h4, .reviewbox .score span, .ajax-select a #news_select, .authorposts h4, h4 .widget-title
+    h5,h5 a,.widget h3,.widget h2,.widget h4,.reviewbox h4,.reviewbox .score span,.ajax-select a#news_select,.authorposts h4,h4.widget-title
         {
             font-family: "Microsoft Yahei", arial, sans-serif;
              font-weight: normal;
@@ -1325,14 +1325,14 @@
         }
 
 
-    h4, h4 a, .footer .note h4, .footer h4 .subheadline, .newspost h4, .paginationbutton .button, .articleinner h2 .indextitle, .widget .articleinner h2 .indextitle, .articleinner h2 .indextitle a, .widget artileinner h2 .indextitle a
+    h4,h4 a,.footer .note h4,.footer h4.subheadline,.newspost h4,.paginationbutton .button,.articleinner h2.indextitle,.widget .articleinner h2.indextitle,.articleinner h2.indextitle a,.widget artileinner h2.indextitle a
         {
             font-family: "Microsoft Yahei", arial, sans-serif;
              font-weight: normal;
         }
 
 
-    .sf-menu a, .ajax-select ul .sf-menu li li a
+    .sf-menu a,.ajax-select ul.sf-menu li li a
         {
             font-family: "Droid Sans", arial, sans-serif;
              font-weight: bold;
@@ -1343,7 +1343,7 @@
     : \\*  Isotope Transitions\n-----------------------------------------------------------------------------------;*\\
 
 
-    .isotope, .isotope .isotope-item
+    .isotope,.isotope .isotope-item
         {
             -webkit-transition-duration: 0.8s;
              -moz-transition-duration: 0.8s;
@@ -1373,7 +1373,7 @@
         }
 
 
-    .isotope .no-transition, .isotope .no-transition .isotope-item, .isotope .isotope-item .no-transition
+    .isotope.no-transition,.isotope.no-transition .isotope-item,.isotope .isotope-item.no-transition
         {
             -webkit-transition-duration: 0s;
              -moz-transition-duration: 0s;
@@ -1399,7 +1399,7 @@
         }
 
 
-    .pagetitlewrap span .description
+    .pagetitlewrap span.description
         {
             float: left;
              padding-left: 20px;
@@ -1410,13 +1410,13 @@
         }
 
 
-    .container .titlecontainer
+    .container.titlecontainer
         {
             z-index: 9;
         }
 
 
-    h3 .pagetitle, h1 .pagetitle
+    h3.pagetitle,h1.pagetitle
         {
             margin: 0;
              font-size: 27px;
