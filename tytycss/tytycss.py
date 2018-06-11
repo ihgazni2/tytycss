@@ -522,20 +522,75 @@ def get_prelude_cil(rule,for_display=False):
     return(cil)
 
 SELLITS = ['.','*','#',',','>','+',':','~']
-SELATTANEXTS = ['.','#',',','>','+',':','~']
+SELATTANEXTS = ['.','#']
 SELATTABOTHS = [',','>','+',':','~']
 #
 def prelude_cil2str(cil):
     '''
-        cil = ['a', '[target=_blank]', 'b', 'c']
-        cil = ['a', '[target=_blank]', '[target=_blank]', 'b', 'c']
-        cil = ['a', '.', 'b', '>', 'c']
     '''
     if(cil.__len__()==0):
         return("")
     else:
         pass
-    s = elel.join(cil,"")
+    lngth = cil.__len__()
+    ####
+    prev = cil[i]
+    ncil = [prev]
+    ####
+    i = 1
+    while(i<(lngth-1)):
+        prev = cil[i-1]
+        curr = cil[i]
+        nxt = cil[i+1]
+        ########PREV########
+        if(curr in SELATTABOTHS):
+            if(prev == "\x20"):
+                ncil.pop(-1)
+            else:
+                pass
+        else:
+            pass
+        ########NEXT########
+        if(curr in SELATTANEXTS):
+            if(nxt == "\x20"):
+                #no need whitespace after "."
+                pass
+            else:
+                ncil.append(curr)
+        elif(curr in SELATTABOTHS):
+            if(nxt == "\x20"):
+                #no need whitespace after 
+                pass
+            else:
+                ncil.append(curr)
+        else:
+            ncil.append(curr)
+        i = i +1
+    ####
+    if(lngth > 1):
+        prev = cil[lngth-2]
+        curr = cil[lngth-1]
+        if(curr in SELATTABOTHS):
+            if(prev == "\x20"):
+                ncil.pop(-1)
+            else:
+                pass
+        else:
+            pass
+        ncil.append(curr)
+        #########
+        if(ncil[0] in SELATTANEXTS):
+            if(ncil[1] == "\x20"):
+                ncil.pop(1)
+            else:
+                pass
+        else:
+            pass
+    else:
+        pass
+    ####
+    ####
+    s = elel.join(ncil,"")
     s =eses.replace(s,re.compile("[\x20]+"),"\x20")
     return(s.strip('\x20'))
 
