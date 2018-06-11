@@ -555,6 +555,7 @@ def prelude_cil2str(cil):
                 s = s + curr + '\x20'
         else:
             s = s + curr + '\x20'
+    s =eses.replace(s,re.compile("[\x20]+"),"\x20")
     return(s.strip('\x20'))
 
 
