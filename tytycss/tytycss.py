@@ -535,8 +535,7 @@ def prelude_cil2str(cil):
         return("")
     else:
         pass
-    last = cil[0]
-    s = last
+    s = elel.join(cil,"")
     s =eses.replace(s,re.compile("[\x20]+"),"\x20")
     return(s.strip('\x20'))
 
