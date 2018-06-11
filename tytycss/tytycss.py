@@ -532,6 +532,13 @@ def prelude_cil2str(cil):
         return("")
     else:
         pass
+    ####
+    def cond_func(s):
+        s = eses.replace(s,re.compile("[\x20]+"),"\x20")
+        return(s)
+    ####
+    cil = elel.array_map(cil,cond_func)
+    ####
     lngth = cil.__len__()
     ####
     prev = cil[0]
