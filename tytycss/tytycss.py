@@ -170,7 +170,7 @@ def cntnt_fmt_norecur(content):
             content = content[:-1]
         else:
             pass
-    return(ct)
+    return(content)
 
 def cntnt_is_leaf(ele):
     '''
