@@ -537,24 +537,6 @@ def prelude_cil2str(cil):
         pass
     last = cil[0]
     s = last
-    if(last in SELATTANEXTS):
-        pass
-    else:
-        s = s +'\x20'
-    for i in range(1,cil.__len__()):
-        curr = cil[i]
-        if(curr in SELATTABOTHS):
-            s = s.rstrip("\x20")
-        if(curr in SELATTANEXTS):
-            s = s + curr
-        elif(curr[0] == '['):
-            if(s[-2:] == "] "):
-                s = s + curr + '\x20'
-            else:
-                s = eses.rstrip(s,"\x20",1)
-                s = s + curr + '\x20'
-        else:
-            s = s + curr + '\x20'
     s =eses.replace(s,re.compile("[\x20]+"),"\x20")
     return(s.strip('\x20'))
 
