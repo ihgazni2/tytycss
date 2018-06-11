@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
       name="tytycss",
-      version = "0.3",
+      version = "0.4",
       description="search css file by selector-string/prelude-string",
       author="dapeli",
       url="https://github.com/ihgazni2/tytycss",
