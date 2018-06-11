@@ -554,13 +554,15 @@ def prelude_cil2str(cil):
         if(curr in SELATTANEXTS):
             if(nxt == "\x20"):
                 #no need whitespace after "."
-                pass
+                i = i + 1
+                ncil.append(curr)
             else:
                 ncil.append(curr)
         elif(curr in SELATTABOTHS):
             if(nxt == "\x20"):
                 #no need whitespace after 
-                pass
+                i = i + 1
+                ncil.append(curr)
             else:
                 ncil.append(curr)
         else:
