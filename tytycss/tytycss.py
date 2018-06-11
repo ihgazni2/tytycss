@@ -159,7 +159,17 @@ def dcds1_prelude(prelude):
 #cntnt dict 
 
 def cntnt_fmt_norecur(content):
-    ct = elel.filter(content,lambda ele:(ele['type']!='whitespace'))
+    if(content.__len__() == 0):
+        return([])
+    else:
+        if(content[0]['type']=='whitespace'):
+            content = content[1:]
+        else:
+            pass
+        if(content[-1]['type']=='whitespace'):
+            content = content[:-1]
+        else:
+            pass
     return(ct)
 
 def cntnt_is_leaf(ele):
