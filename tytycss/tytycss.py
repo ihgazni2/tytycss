@@ -350,6 +350,8 @@ def encd_other(d):
 def encd_hash(d):
     return("#" + str(d['value']))
 
+def encd_url(d):
+    return('"' + str(d['value']+'"'))
 
 def encd_one(d):
     if(d['type'] == 'dimension'):
@@ -362,6 +364,8 @@ def encd_one(d):
         s = encd_hash(d)
     elif(d['type'] == 'at-keyword'):
         s = encd_cntnt_atkey(d)
+    elif(d['type'] == 'url'):
+        s = encd_url(d)
     else:
         s = encd_other(d)
     return(s)
