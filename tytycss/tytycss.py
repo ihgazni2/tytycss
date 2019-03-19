@@ -351,7 +351,7 @@ def encd_hash(d):
     return("#" + str(d['value']))
 
 def encd_url(d):
-    return('"' + str(d['value']+'"'))
+    return('url("' + str(d['value']+'")'))
 
 def encd_one(d):
     if(d['type'] == 'dimension'):
