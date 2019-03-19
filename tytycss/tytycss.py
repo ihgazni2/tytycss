@@ -833,11 +833,14 @@ def fe_is_leaf(obj,codec="utf-8"):
     if(rules.__len__()>1):
         return(False)
     else:
-        rule = rules[0]
-        if(rule.type == "error"):
+        if(rules.__len__()==0):
             return(True)
         else:
-            return(False)
+            rule = rules[0]
+            if(rule.type == "error"):
+                return(True)
+            else:
+                return(False)
 
 #desc mat 
 #prelude='list',codec='utf-8'

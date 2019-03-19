@@ -246,3 +246,25 @@ formatted = tyty.beautify_rule(input)
 # tyty.CSS.beautify_file.0.png
 tyty.beautify_cssfile("tst1.css","tst1.fmt.css")
 # tyty.CSS.beautify_file.1.png
+
+
+# beautify
+import tytycss.tytycss as tyty
+# load from input string
+# tyty.CSS.__init__0.png
+input = '''
+p
+{
+ color:blue;
+ text-align:center;
+}
+.marked
+{
+ background-color:red;
+}
+.marked p
+{
+  color:white;
+}'''
+
+tyty.beautify(input)
