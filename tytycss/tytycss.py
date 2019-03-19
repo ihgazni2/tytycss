@@ -1114,8 +1114,7 @@ def beautify_selpath(sel):
     sel = prelude_cil2str(cil)
     return(sel)
 
-def trim_func(r):
-    s = r.css
+def trim_func(s):
     s = s.strip('/n')
     s = eses.lstrip(s,'{',1)
     s = eses.rstrip(s,'}',1)
@@ -1123,7 +1122,8 @@ def trim_func(r):
 
 def beautify(input):
     css = CSS(input=input)
-    arr = elel.array_map(css,trim_func)
+    rs = elel.array_map(css.rules,lambda ele:Rule(ele).css)
+    arr = elel.array_map(rs,trim_func)
     s = elel.join(arr,'\n')
     return(s)
 
@@ -1135,6 +1135,7 @@ def beautify_rule(input):
    
 def beautify_cssfile(src_file,dst_file):
     css = CSS(fn=src_file)
-    arr = elel.array_map(css,trim_func)
+    rs = elel.array_map(css.rules,lambda ele:Rule(ele).css)
+    arr = elel.array_map(rs,trim_func)
     s = elel.join(arr,'\n')
     write_file(dst_file,s) 
