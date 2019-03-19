@@ -651,6 +651,8 @@ def get_css_rule_str(d):
         s = s[:-1] + '}'
     else:
         pass
+    regex = re.compile("\n[ ]+\{\n[ ]+;\n[ ]+\}")
+    s = eses.replace(s,regex,";")
     return(s)
 
 
