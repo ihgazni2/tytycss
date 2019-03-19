@@ -166,10 +166,13 @@ def cntnt_fmt_norecur(content):
             content = content[1:]
         else:
             pass
-        if(content[-1]['type']=='whitespace'):
-            content = content[:-1]
-        else:
+        if(content.__len__()==0):
             pass
+        else:
+            if(content[-1]['type']=='whitespace'):
+                content = content[:-1]
+            else:
+                pass
     return(content)
 
 def cntnt_is_leaf(ele):
