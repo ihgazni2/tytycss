@@ -1,13 +1,18 @@
 from setuptools import setup, find_packages
 setup(
       name="tytycss",
-      version = "0.5",
+      version = "0.6",
       description="search css file by selector-string/prelude-string",
       author="dapeli",
       url="https://github.com/ihgazni2/tytycss",
       author_email='terryinzaghi@163.com', 
       license="MIT",
       long_description = "refer to .md files in https://github.com/ihgazni2/tytycss",
+      entry_points = {
+         'console_scripts': [
+             'tytycss_beau=tytycss.bin.beau:main'
+         ]     
+      }, 
       classifiers=[
           'Environment :: Console',
           'Environment :: Web Environment',

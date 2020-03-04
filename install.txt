@@ -1,1 +1,2 @@
-/usr/local/lib/python3.6/dist-packages/tytycss-0.5-py3.6.egg
+/usr/local/lib/python3.6/dist-packages/tytycss-0.6-py3.6.egg
+/usr/local/bin/tytycss_beau
